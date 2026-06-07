@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+
+    scanf("%d", &n);
+
+    if(n <= 0) {
+        printf("Not Power of 2");
+        return 0;
+    }
+
+    while(n > 1) {
+        if(n % 2 != 0) {
+            printf("Not Power of 2");
+            return 0;
+        }
+        n /= 2;
+    }
+
+    printf("Power of 2");
+    return 0;
+}
