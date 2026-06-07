@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main(){
+    int i,n,k,found=0;
+    int arr[100];
+    printf("Enter number of values:");
+    scanf("%d",&n);
+
+    for(i=0;i<n;i++){
+        printf("Enter value %d:",i+1);
+        scanf("%d",&arr[i]);
+    }
+
+    printf("Enter value to be searched:");
+    scanf("%d",&k);
+
+    for(i=0;i<n;i++){
+        if(k==arr[i]){
+            found=1;
+            printf("Value found");
+            break;
+        }
+    }
+
+    if(found=0){
+        printf("Value not found");
+        return 0;
+    }
+}
