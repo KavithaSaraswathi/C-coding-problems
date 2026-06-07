@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int a, b, c, d, digit = 0;
+    int arm = 0;
+
+    printf("Enter a number: ");
+    scanf("%d", &a);
+
+    b = a;
+
+    while (b != 0) {
+        digit++;
+        b = b / 10;
+    }
+
+    c = a;
+
+    while (c != 0) {
+        d = c % 10;
+        arm += pow(d, digit);
+        c = c / 10;
+    }
+
+    if (a == arm)
+        printf("Armstrong");
+    else
+        printf("Not Armstrong");
+
+    return 0;
+}
