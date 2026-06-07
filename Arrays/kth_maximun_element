@@ -1,0 +1,45 @@
+int main(){
+    int i,j,n,k,temp;
+    int arr[100];
+    printf("Enter number of elements:");
+    scanf("%d",&n);
+  
+    for(i=0;i<n;i++){
+        printf("Enter the value %d:",i+1);
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter value of k:");
+    scanf("%d",&k);
+    
+    //ascending order
+    for(i=0;i<n-1;i++){
+        for(j=i+1;j<n;j++){
+            if(arr[i]<arr[j]){
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+    int count=1;
+
+    if(k==1) {
+        printf("1st maximum element is %d", arr[0]);
+        return 0;
+    }
+
+    for(int i=1; i<n; i++) {
+        if(arr[i]!= arr[i-1]) {
+            count++;
+        }
+
+        if(count==k) {
+            printf("%dth maximum element is %d", k, arr[i]);
+            return 0;
+        }
+    }
+
+    printf("k is greater than number of distinct elements");
+
+    return 0;
+}
